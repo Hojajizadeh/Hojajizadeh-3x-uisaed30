@@ -20,12 +20,3 @@ RUN curl -L https://github.com/mhsanaei/3x-ui/releases/download/v3.6.0/x-ui-linu
     && chmod +x /usr/local/x-ui/x-ui
 
 RUN mkdir -p /etc/x-ui /var/log/x-ui
-
-COPY nginx.conf.template /etc/nginx/nginx.conf.template
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
-
-RUN mkdir -p /usr/share/nginx/html/view
-COPY sub-view.html /usr/share/nginx/html/view/index.html
-
-CMD ["/start.sh"]
